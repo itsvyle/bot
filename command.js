@@ -1,3 +1,15 @@
+const NormalCommandFields = [
+    'name',
+    'type',
+    'roles_mode',
+    'roles',
+    'channels_mode',
+    'channels',
+    'erase_message',
+    'interval','aliases',
+    'enabled',
+];
+
 class VyleCommand {
     constructor(type,name,data) {
         /** 
@@ -124,6 +136,9 @@ class VyleCommand {
         if (this.interval) this.last_use = Date.now();
     }
 
+    /**
+     * If over 0, then command is not ready
+     */
     ready() {
         if (!this.interval) return true;
         if (!this.last_use) return true;
@@ -164,10 +179,11 @@ class VyleCommand {
     }
 
     toSave() {
-        let r = Object.assign(this,{
-            aliases: this.aliases_
-        });
-        delete r['example'];
+        let r = NormalCommandFields.reduce((map,field) => {
+            map[field] = this[field];
+            return map;
+        },{});
+        r.aliases = this.aliases_;
         return r;
     }
 }
@@ -200,6 +216,13 @@ class VyleCustomCommand extends VyleCommand {
     content() {
         if (!this.text) return null;
         return this.text;
+    }
+
+    toSave() {
+        let r = super.toSave();
+        r.description = this.description;
+        r.text = this.text;
+        return r;
     }
 }
 

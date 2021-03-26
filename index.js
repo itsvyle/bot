@@ -15,6 +15,9 @@ const app = Util.express({
     port: 3000,
     post: true
 });
+const express = app.express;
+const fs = require("fs");
+const write = (path,d) => fs.writeFileSync(path,JSON.stringify(d,null,2));
 
 const Config = require("./config.js");
 var pg = require('pg');
@@ -68,6 +71,8 @@ class Client extends Events {
         this.guilds = new Collection();
 
         this.users = new Collection();
+
+        Object.defineProperty(this,"secret",{value: process.env.API_SECRET,writable: true});
     }
 
     start() {
@@ -255,7 +260,7 @@ const client = new Client();
 client.bot.on("ready",function () {
     console.log('[start] Connection to discord client successfully as ' + client.bot.user.tag + ' !');
     Config.bot_icon = client.bot.user.displayAvatarURL();
-    client.loadData();
+    app.connect(true);
 });
 
 /**
@@ -304,9 +309,16 @@ function onMessage(msg) {
         return msg.channel.send(`${msg.author}, this command (\`${cmd.name}\`) cannot be used in this channel (${msg.channel})`);
     }
 
+    var t = cmd.ready();
+    if (t !== true && t > 0) {
+        return msg.channel.send(Util.formatTime(t));
+    }
+
     if (cmd.type === "custom") {
         let c = cmd.content();
         if (c !== null) msg.channel.send(c);
+        cmd.done();
+        if (cmd.erase_message) msg.delete();
         return;
     }
     args = args.trim().toLowerCase();
@@ -386,6 +398,8 @@ function onMessage(msg) {
                 });
             });
     }
+    cmd.done();
+    if (cmd.erase_message) msg.delete();
 }
 
 
@@ -402,6 +416,28 @@ client.connectSQL().then(() => {
 
 
 askReadCommand();
+
+var api = express.Router();
+app.use("/api",function (req,res,next) {
+    if (!req.headers || !client.secret) {
+        res.status(500);
+        return res.send("ERROR");
+    }
+
+    let auth = req.headers.authorization;
+    if (!auth || auth !== client.secret) {
+        res.status(403);
+        return res.send("Unauthorized");
+    }
+    console.log(auth);
+    next();
+},api);
+
+api.get("/",function (req,res) {
+    return res.send("OK");
+});
+
+
 
 /**
  * This callback is displayed as a global member.

@@ -5,7 +5,7 @@ const Config = require("./config.js");
 const GuildFields = Config.GuildFields;
 const {VyleCommand,VyleCustomCommand} = require("./command.js");
 const Parsing = require("./parsing.js");
-var kwmqkl_meqwklme_a = Config;
+
 
 class VyleGuild {
     constructor(client,id,data) {
@@ -256,5 +256,44 @@ class VyleGuild {
 
         return embed;
     }
+
+    dashboardData() {
+        let g = this.client.bot.guilds.cache.get(this.id);
+        if (!g) {
+            return null;
+        }
+        let r = this.toSave();
+        r.roles = [];
+        r.channels = [];
+
+        var f = (c) => {
+            let og = this.actions.get(c.name);
+            c.example = og.example;  
+            c.description = og.description;
+            c.usage = og.usage || null;
+        };
+
+        r.actions.forEach(f);
+
+        r.name = g.name;
+
+        // console.log(r);
+        r.roles = g.roles.cache.map(t => ({
+            id: t.id,
+            name: t.name,
+            color: t.hexColor,
+            pos: t.position
+        })).sort(Util.sortBy({name: "pos",reverse: true}));
+
+        r.channels = g.channels.cache.map(t => ({
+            id: t.id,
+            type: t.type,
+            name: t.name,
+            pos: t.rawPosition
+        })).filter(t => t.type === "text").sort(Util.sortBy({name: "pos"}));
+
+        return r;
+    }
+
 }
 module.exports = VyleGuild;

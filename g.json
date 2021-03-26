@@ -1,0 +1,175 @@
+{
+  "id": "808074192376430633",
+  "role_admin": null,
+  "prefix": ",",
+  "channel_bot": null,
+  "channel_general": "808074192830464053",
+  "channels_emojis": [],
+  "channels_images": [
+    "809442134612377660"
+  ],
+  "actions": [
+    {
+      "name": "ping",
+      "type": "action",
+      "roles_mode": "black",
+      "roles": [],
+      "channels_mode": "black",
+      "channels": [],
+      "erase_message": false,
+      "interval": 0,
+      "aliases": [],
+      "enabled": true,
+      "description": "Get the latency with the bot's server",
+      "usage": null
+    },
+    {
+      "name": "help",
+      "type": "action",
+      "roles_mode": "black",
+      "roles": [],
+      "channels_mode": "black",
+      "channels": [],
+      "erase_message": false,
+      "interval": 0,
+      "aliases": [],
+      "enabled": true,
+      "description": "Information on the commands of the bot",
+      "usage": "help [<command name OR page number>]"
+    },
+    {
+      "name": "write",
+      "type": "action",
+      "roles_mode": "black",
+      "roles": [],
+      "channels_mode": "black",
+      "channels": [],
+      "erase_message": false,
+      "interval": 0,
+      "aliases": [
+        "w"
+      ],
+      "enabled": true,
+      "description": "Writes text out in emojis",
+      "usage": "write <text>"
+    },
+    {
+      "name": "clear",
+      "type": "action",
+      "roles_mode": "black",
+      "roles": [],
+      "channels_mode": "black",
+      "channels": [],
+      "erase_message": false,
+      "interval": 0,
+      "aliases": [],
+      "enabled": true,
+      "example": "clear 50",
+      "description": "Clears the last messages. Max number at once is 100",
+      "usage": "clear <number of messages>"
+    },
+    {
+      "name": "zoom-link",
+      "type": "action",
+      "roles_mode": "black",
+      "roles": [],
+      "channels_mode": "black",
+      "channels": [],
+      "erase_message": false,
+      "interval": 0,
+      "aliases": [
+        "z"
+      ],
+      "enabled": true,
+      "description": "Returns the zoom link of a teacher for a search query",
+      "usage": "zoom-link <teacher name / part of teacher name>"
+    }
+  ],
+  "customs": [
+    {
+      "name": "test",
+      "type": "custom",
+      "roles_mode": "black",
+      "roles": [],
+      "channels_mode": "black",
+      "channels": [],
+      "erase_message": false,
+      "interval": 0,
+      "aliases": [],
+      "enabled": true,
+      "description": null,
+      "text": "caca boudin"
+    }
+  ],
+  "roles": [
+    {
+      "id": "818546268334325771",
+      "name": "Admin",
+      "color": "#3498db",
+      "pos": 4
+    },
+    {
+      "id": "808074371863806063",
+      "name": "Vyle Bot",
+      "color": "#000000",
+      "pos": 3
+    },
+    {
+      "id": "808074577154146315",
+      "name": "EPIC RPG",
+      "color": "#000000",
+      "pos": 2
+    },
+    {
+      "id": "816740975464284191",
+      "name": "bot 2.0",
+      "color": "#000000",
+      "pos": 1
+    },
+    {
+      "id": "808074192376430633",
+      "name": "@everyone",
+      "color": "#000000",
+      "pos": 0
+    }
+  ],
+  "channels": [
+    {
+      "id": "808074192830464053",
+      "type": "text",
+      "name": "général",
+      "pos": 0
+    },
+    {
+      "id": "808074218981163038",
+      "type": "text",
+      "name": "room-1",
+      "pos": 1
+    },
+    {
+      "id": "808074241034944553",
+      "type": "text",
+      "name": "attachments",
+      "pos": 2
+    },
+    {
+      "id": "808074261578121246",
+      "type": "text",
+      "name": "room-2",
+      "pos": 3
+    },
+    {
+      "id": "809442134612377660",
+      "type": "text",
+      "name": "room-1-2",
+      "pos": 4
+    },
+    {
+      "id": "817126629712330753",
+      "type": "text",
+      "name": "test-command",
+      "pos": 5
+    }
+  ],
+  "name": "VGS"
+}
