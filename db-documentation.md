@@ -98,3 +98,8 @@ orderby is used to precise by which column the rows are sorted.
 <groupby field1="NO" field2="NAME"/>
 ```
 groupby is used to precise by which column the rows are grouped (executes the sql `GROUPBY` option).
+
+#### pagination
+```xml
+<pagination page="0" size="50"/>
+```
