@@ -23,6 +23,8 @@ An englobing node (named `commands`):
 ```
 
 ## Authentication
+**Note**: Some commands might not require the caller to be authenticated
+
 Add this command inside of `<commands>`:
 ```xml
 <login user_id="your_user_id" password="your_password"/>
