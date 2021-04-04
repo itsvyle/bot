@@ -35,7 +35,7 @@ The keys will be returned at the end. Example:
 
 **Fields**:
 ```xml
-  <commands>
+<commands>
   <insert table="xxx">
     <fields zzz="123"/>
   </insert>
