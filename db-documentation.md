@@ -16,7 +16,17 @@ Add this command inside of `<commands>`:
 
 If the credentials are correct, it should return something like this:
 ```xml
-<login status="1" loggedin="1" session_token="a_new_session_token" session_end="the_sessions_expiration_date" last_session_token="the_previous_session_token" last_session_start="the_previous_session_token_startdate"/>
+<login status="1" loggedin="1" session_token="a_new_session_token" session_end="the_sessions_expiration_date" last_session_token="the_previous_session_token" last_session_start="the_previous_session_token_startdate">
+   <approle>Role1</approle>
+   <approle>Role2</approle>
+</login>
+```
+
+After that, for each query to the database, add the `session_token` and `app_role` attributes to the englobing node, as so :
+```xml
+<commands session_token="a_new_session_token" app_role="Role2">
+  <!-- Your commands here -->
+</commands>
 ```
 
 ## Commands
