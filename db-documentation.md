@@ -37,7 +37,7 @@ The keys will be returned at the end. Example:
 </results>
 ```
 
-**Fields**:
+### Fields:
 ```xml
 <commands>
   <insert table="xxx">
@@ -52,7 +52,7 @@ For each command
 
 **Note**: `<xmlfield XML_FIELD="string"><!-- XML HERE --></xmlfield>` can also be used to insert xml
 
-**systemfields**
+### systemfields
 ```xml
 <commands>
   <insert table="xxx">
@@ -67,7 +67,7 @@ _Possible values_:
 * mastersystemdate : the date at which the request started
 * lastinsertid : The last sql insert id
 
-**Where**:
+### Where:
 ```xml
 <commands>
   <select table="xxx">
