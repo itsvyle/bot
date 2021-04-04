@@ -103,3 +103,9 @@ groupby is used to precise by which column the rows are grouped (executes the sq
 ```xml
 <pagination page="0" size="50"/>
 ```
+
+#### join:
+```xml
+<join type="LEFT" table="QA_RESPONSES" condition="QA_RESPONSES.QUESTION_ROOTNO=QA_QUESTIONS.ROOTNO" />
+```
+Executes the sql `JOIN ON <type>`
