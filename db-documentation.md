@@ -25,6 +25,7 @@ An englobing node (named `commands`):
 ## Authentication
 **Note**: Some commands might not require the caller to be authenticated
 
+### To login
 Add this command inside of `<commands>`:
 ```xml
 <login user_id="your_user_id" password="your_password"/>
@@ -37,7 +38,7 @@ If the credentials are correct, it should return something like this:
    <approle>Role2</approle>
 </login>
 ```
-
+### To execute requests
 After that, for each query to the database, add the `session_token` and `app_role` attributes to the englobing node, as so :
 ```xml
 <commands session_token="a_new_session_token" app_role="Role2">
