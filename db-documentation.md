@@ -46,5 +46,18 @@ For each command
 * update : The new values
 * select : The fields to be fetched. Then, the attribute value is the type of the field (xml, string, long)
 
+**Where**:
+```xml
+<commands>
+  <select table="xxx">
+    <fields zzz="string"/>
+    <where>
+      <condition table="xxx" field="zzz" sign="equal" value="123" type="string"/>
+    </where>
+  </select>
+</commands>
+```
+A SQL Where is generated from the `<where>` structure
+
 ## Insert
 Example of command
