@@ -1,7 +1,7 @@
 # DB Documentation
 
 ## Structure
-An englobing node (commands):
+An englobing node (named `commands`):
 ```xml
 <commands>
   <!-- One or more commands here -->
