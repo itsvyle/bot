@@ -50,6 +50,23 @@ For each command
 * update : The new values
 * select : The fields to be fetched. Then, the attribute value is the type of the field (xml, string, long)
 
+**Note**: `<xmlfield XML_FIELD="string"><!-- XML HERE --></xmlfield>` can also be used to insert xml
+
+**systemfields**
+```xml
+<commands>
+  <insert table="xxx">
+    <fields zzz="123"/>
+    <systemfields date="systemdate"/>
+  </insert>
+</commands>
+```
+These field's values are automatically set by DB.php
+_Possible values_:
+* systemdate : the current system date
+* mastersystemdate : the date at which the request started
+* lastinsertid : The last sql insert id
+
 **Where**:
 ```xml
 <commands>
