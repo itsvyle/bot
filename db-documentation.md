@@ -26,6 +26,10 @@ For now, these are the possible commands:
   </insert>
 </commands>
 ```
+
+__Possible key values__:
+* autoincrement : Used in an `<insert>` command, for the autoincrement columns
+
 The keys will be returned at the end. Example:
 ```xml
 <results status="1">
@@ -57,7 +61,7 @@ For each command
   </select>
 </commands>
 ```
-A SQL Where is generated from the `<where>` structure
+A SQL Where is generated from the `<where>` structure.
 
 ## Insert
 Example of command
