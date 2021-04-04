@@ -8,6 +8,14 @@ An englobing node (commands):
 </commands>
 ```
 
+## Commands
+For now, these are the possible commands:
+* insert
+* insertupdate
+* update
+* select
+* delete
+
 ## Global options
 **Keys**:
 ```xml
@@ -18,19 +26,25 @@ An englobing node (commands):
   </insert>
 </commands>
 ```
-The keys will be returned at the end. Example
+The keys will be returned at the end. Example:
 ```xml
 <results status="1">
   <insert table="xxx" NO="1" YYY="constantvalue"></insert>
 </results>
 ```
 
-## Commands
-For now, these are the possible commands:
-* insert
-* insertupdate
-* update
-* select
+**Fields**:
+```xml
+  <commands>
+  <insert table="xxx">
+    <fields zzz="123"/>
+  </insert>
+</commands>
+```
+For each command
+* insert : The column values of the row that is added
+* update : The new values
+* select : The fields to be fetched. Then, the attribute value is the type of the field (xml, string, long)
 
 ## Insert
-Example of 
+Example of command
