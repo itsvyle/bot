@@ -27,7 +27,7 @@ For now, these are the possible commands:
 </commands>
 ```
 
-__Possible key values__:
+_Possible key values_:
 * autoincrement : Used in an `<insert>` command, for the autoincrement columns
 
 The keys will be returned at the end. Example:
