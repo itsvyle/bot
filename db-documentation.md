@@ -1,6 +1,7 @@
 # DB Documentation
 
 ## Structure
+**The request data:**
 An englobing node (named `commands`):
 ```xml
 <commands>
