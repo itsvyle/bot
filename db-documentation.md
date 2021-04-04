@@ -8,9 +8,14 @@ An englobing node (commands):
 </commands>
 ```
 
+**Keys**:
+
 ## Commands
 For now, these are the possible commands:
 * insert
 * insertupdate
 * update
 * select
+
+## Insert
+Example of 
