@@ -90,3 +90,9 @@ A SQL Where is generated from the `<where>` structure.
 orderby is used to precise by which column the rows are sorted.
 
 **Note**: `ASC` can be added after the field name to reverse sort 
+
+#### groupby:
+```xml
+<groupby field1="NO" field2="NAME"/>
+```
+groupby is used to precise by which column the rows are grouped (executes the sql `GROUPBY` option).
