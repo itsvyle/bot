@@ -13,7 +13,7 @@ For now, these are the possible commands:
 * insert
 * insertupdate
 * update
-* select
+* [select](#select)
 * delete
 
 ## Global options
