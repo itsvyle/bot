@@ -8,6 +8,17 @@ An englobing node (commands):
 </commands>
 ```
 
+## Authentication
+Add this command inside of `<commands>`:
+```xml
+<login user_id="your_user_id" password="your_password"/>
+```
+
+If the credentials are correct, it should return something like this:
+```xml
+<login status="1" loggedin="1" session_token="a_new_session_token" session_end="the_sessions_expiration_date" last_session_token="the_previous_session_token" last_session_start="the_previous_session_token_startdate"/>
+```
+
 ## Commands
 For now, these are the possible commands:
 * insert
