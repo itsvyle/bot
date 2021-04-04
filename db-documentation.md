@@ -17,6 +17,8 @@ For now, these are the possible commands:
 * delete
 
 ## Global options
+These are options that will be used in more than one type of command
+
 ### Keys:
 ```xml
 <commands>
