@@ -9,6 +9,19 @@ An englobing node (named `commands`):
 </commands>
 ```
 
+**The result:**
+```xml
+<results status="1" datestarted="210405012300" datecompleted="210405012300">
+  <!-- Results of individual commands -->
+</results>
+```
+**Note**: The `status` attribute of the `<results>` will be '1' ONLY if there were no mistakes while the execution
+
+**Each command**: Each command will have at least one attribute, `status`, which indicates if the command was executed with success
+```xml
+<commandname status="0|1" ...other attributes/>
+```
+
 ## Authentication
 Add this command inside of `<commands>`:
 ```xml
