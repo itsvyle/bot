@@ -17,7 +17,7 @@ For now, these are the possible commands:
 * delete
 
 ## Global options
-**Keys**:
+### Keys:
 ```xml
 <commands>
   <insert table="xxx">
